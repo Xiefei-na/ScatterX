@@ -1,5 +1,5 @@
-function [cenx,ceny] = getBeamCenter(p)
-[m,n]=find(   p  ==  round(max(p(:))/50)   );
+function [cenx,ceny] = getBeamCenter(p,c)
+[m,n]=find(   p  ==  round(c*nanmean(p(:)))   );
 X=[m,n];
 n=length(X(:,1));
 y=ones(n,1);
